@@ -2,7 +2,6 @@ import React, { useEffect } from 'react';
 import { ArrowLeft } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { LEGAL_DOCS } from '../constants/legal';
-import ReactMarkdown from 'react-markdown'; // We might not have this, so let's implement simple rendering
 
 interface PolicyProps {
   title: string;
@@ -31,9 +30,6 @@ const Policy: React.FC<PolicyProps> = ({ title, docType }) => {
                  return <h3 key={i} className="text-lg font-bold text-slate-900 mt-6 mb-2">{line.replace('###', '').trim()}</h3>;
              }
              if (line.trim().startsWith('|')) {
-                 // Simple table rendering logic for markdown-like tables could go here, 
-                 // but for simplicity let's just render the row text or use a pre tag for tables if complex.
-                 // For now, let's just render lines. The table content is readable as text too.
                  return <div key={i} className="font-mono text-xs bg-white p-1 border-b border-slate-200 overflow-x-auto">{line}</div>
              }
              return <p key={i} className="mb-2">{line}</p>;
