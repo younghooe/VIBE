@@ -39,7 +39,7 @@ const SqlStudy: React.FC = () => {
   const monthName = currentDate.toLocaleString('en-US', { month: 'long' });
 
   // Generate calendar grid
-  const days = [];
+  const days: (number | null)[] = [];
   for (let i = 0; i < firstDay; i++) {
     days.push(null);
   }

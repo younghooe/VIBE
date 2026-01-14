@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { X, ChevronLeft, ChevronRight, Loader2, CheckCircle } from 'lucide-react';
+import { X, ChevronLeft, Loader2, CheckCircle } from 'lucide-react';
 import { LEGAL_DOCS } from '../constants/legal';
 
 interface ModalProps {
@@ -58,7 +58,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
     }
   };
 
-  // isValid를 handleSubmit보다 먼저 선언해야 합니다.
+  // isValid는 반드시 handleSubmit 함수보다 먼저 선언되어야 합니다.
   const isValid = name.trim() !== '' && phone.trim() !== '' && agreeTerms && agreePrivacy;
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -116,7 +116,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
         return;
       }
 
-      const promises = [];
+      const promises: Promise<Response>[] = [];
 
       // 1. Google Sheets 전송
       if (GOOGLE_SCRIPT_URL) {
