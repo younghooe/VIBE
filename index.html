@@ -1,0 +1,64 @@
+<script type="importmap">
+{
+  "imports": {
+    "react-router-dom": "https://esm.sh/react-router-dom@^7.12.0",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "@vitejs/plugin-react": "https://esm.sh/@vitejs/plugin-react@^5.1.2",
+    "vite": "https://esm.sh/vite@^7.3.1",
+    "lucide-react": "https://esm.sh/lucide-react@^0.562.0",
+    "react-markdown": "https://esm.sh/react-markdown@^10.1.0",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "react": "https://esm.sh/react@^19.2.3"
+  }
+}
+</script>
+
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>비즈니스 문제를 해결하는 데이터 분석가 | 포트폴리오</title>
+    <link rel="icon" href="https://i.imgur.com/MQVFnFn.png" />
+    <script src="https://cdn.amplitude.com/script/a3b368ad68262a8c81f2b1f7195969e5.js"></script>
+    <script>
+      (function() {
+        try {
+          if (typeof window.amplitude === 'object' && window.amplitude) {
+            if (typeof window.sessionReplay === 'object' && window.sessionReplay && typeof window.sessionReplay.plugin === 'function') {
+              window.amplitude.add(window.sessionReplay.plugin({sampleRate: 1}));
+            }
+            if (typeof window.amplitude.init === 'function') {
+              window.amplitude.init('a3b368ad68262a8c81f2b1f7195969e5', {"fetchRemoteConfig":true,"autocapture":{"attribution":true,"fileDownloads":true,"formInteractions":true,"pageViews":true,"sessions":true,"elementInteractions":true,"networkTracking":true,"webVitals":true,"frustrationInteractions":true}});
+            }
+          }
+        } catch (e) {
+          console.warn("Amplitude init error:", e);
+        }
+      })();
+    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+            },
+            colors: {
+              primary: '#3B82F6', // Blue-500
+              secondary: '#64748B', // Slate-500
+            },
+            animation: {
+              'infinite-scroll': 'infinite-scroll 40s linear infinite',
+              'fade-in': 'fadeIn 0.5s ease-out forwards',
+              'bounce-short': 'bounceShort 1s ease-in-out 2',
+            },
+            keyframes: {
+              'infinite-scroll': {
+                from: { transform: 'translateX(0)' },
+                to: { transform: 'translateX(-50%)' },
+              },
+              fadeIn: {
+                '0%': { opacity: '0', transform: '
