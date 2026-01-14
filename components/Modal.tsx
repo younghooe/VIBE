@@ -58,6 +58,9 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
     }
   };
 
+  // isValid를 handleSubmit보다 먼저 선언해야 합니다.
+  const isValid = name.trim() !== '' && phone.trim() !== '' && agreeTerms && agreePrivacy;
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!isValid || isSubmitting) return;
@@ -142,9 +145,6 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
         );
       }
 
-      // 두 요청 병렬 처리 (하나가 실패해도 다른 하나는 진행되도록 처리할 수 있으나, 여기선 단순 병렬 대기)
-      // Google Sheets의 no-cors 요청은 오류를 반환하지 않으므로, 네트워크 에러 외에는 성공으로 간주됨.
-      // Discord 요청은 CORS 정책에 따라 브라우저에서 차단될 수 있으나, 요청은 시도함.
       await Promise.allSettled(promises);
 
       setIsSuccess(true);
@@ -156,8 +156,6 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
       setIsSubmitting(false);
     }
   };
-
-  const isValid = name.trim() !== '' && phone.trim() !== '' && agreeTerms && agreePrivacy;
 
   if (!isOpen) return null;
 
